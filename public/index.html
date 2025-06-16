@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/aurora-background.js"></script>
+    <script type="module" src="js/auth.js"></script>
   </head>
   <body>
     <div id="aurora-background" class="aurora-background"></div>
@@ -35,12 +36,18 @@
             </ul>
           </nav>
         </div>
+        <button class="login-button" id="auth-button" aria-label="Войти или Зарегистрироваться" data-logged-in="false">Войти</button>
       </header>
       <main class="main-content">
         <section class="hero-section">
-          <h2>Приветствие</h2>
-          <p>Добро пожаловать на сайт Mobildevel! Мы специализируемся на современной мобильной разработке, предлагая инновационные решения для вашего бизнеса.</p>
-          <p>Краткое описание Mobildevel и сфер разработки: Mobildevel - это команда профессионалов, создающая высокопроизводительные и интуитивно понятные мобильные приложения на различных платформах. Мы охватываем полный цикл разработки, от идеи до запуска и поддержки, обеспечивая передовые решения для iOS, Android и кроссплатформенных технологий, таких как Flutter.</p>
+          <h2>Проектирование будущего мобильных приложений</h2>
+          <p>Mobildevel – ваш надежный партнер в разработке высокопроизводительных мобильных приложений для iOS, Android и кроссплатформенных решений на Flutter.</p>
+          <p>Ваше будущее в мобильных технологиях начинается здесь.</p>
+          <div class="hero-visuals">
+            <div class="icon-container"><img src="img/icons8-ос-mac-100.png" alt="iOS Icon"></div>
+            <div class="icon-container"><img src="img/icons8-android-os-100.png" alt="Android Icon"></div>
+            <div class="icon-container"><img src="img/icons8-flutter-100.png" alt="Flutter Icon"></div>
+          </div>
         </section>
 
         <section class="feature-section">
@@ -51,7 +58,7 @@
           <div class="feature-image">
             <!-- Здесь будет анимация или изображение телефона -->
             <div class="phone-mockup">
-              <img src="img/phone-placeholder.png" alt="Мобильное приложение" class="animated-phone">
+              <img src="img/phone-platform.png" alt="Мобильное приложение" class="animated-phone">
             </div>
           </div>
         </section>
@@ -60,7 +67,7 @@
           <div class="feature-image">
             <!-- Здесь будет анимация или изображение кроссплатформенной разработки -->
             <div class="cross-platform-mockup">
-              <img src="img/cross-platform-placeholder.png" alt="Кроссплатформенная разработка" class="animated-cross-platform">
+              <img src="img/flutter-cross-platform.png" alt="Кроссплатформенная разработка" class="animated-cross-platform">
             </div>
           </div>
           <div class="feature-content">
@@ -77,22 +84,95 @@
           <div class="feature-image">
             <!-- Здесь будет анимация или изображение UI/UX -->
             <div class="ui-ux-mockup">
-              <img src="img/ui-ux-placeholder.png" alt="UI/UX Дизайн" class="animated-ui-ux">
+              <img src="img/digital.jpg" alt="UI/UX Дизайн" class="animated-ui-ux">
             </div>
           </div>
         </section>
 
       </main>
+      <div class="login-modal-overlay">
+        <div class="login-modal">
+          <button class="close-modal-button">&times;</button>
+          <h3>Вход / Регистрация</h3>
+          <form class="login-form">
+            <div class="input-group">
+              <label for="username">Имя пользователя:</label>
+              <input type="text" id="username" name="username" required placeholder="Введите ваше имя пользователя">
+              <div class="error-message" id="username-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="password">Пароль:</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="password" name="password" required placeholder="Введите ваш пароль">
+                <button type="button" class="toggle-password" aria-label="Показать/скрыть пароль">👁️</button>
+              </div>
+              <div class="error-message" id="password-error"></div>
+            </div>
+            <button type="submit" class="submit-button">Войти</button>
+            <p class="switch-form">Нет аккаунта? <a href="#" id="show-register">Зарегистрироваться</a></p>
+          </form>
+          <form class="register-form" style="display: none;">
+            <div class="input-group">
+              <label for="reg-username">Имя пользователя:</label>
+              <input type="text" id="reg-username" name="reg-username" required placeholder="Придумайте имя пользователя">
+              <div class="error-message" id="reg-username-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="reg-email">Email:</label>
+              <input type="email" id="reg-email" name="reg-email" required placeholder="Введите ваш Email">
+              <div class="error-message" id="reg-email-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="reg-password">Пароль:</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="reg-password" name="reg-password" required placeholder="Придумайте надежный пароль">
+                <button type="button" class="toggle-password" aria-label="Показать/скрыть пароль">👁️</button>
+              </div>
+              <div class="password-strength" id="password-strength"></div>
+              <div class="error-message" id="reg-password-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="reg-confirm-password">Подтвердите пароль:</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="reg-confirm-password" name="reg-confirm-password" required placeholder="Повторите пароль">
+                <button type="button" class="toggle-password" aria-label="Показать/скрыть пароль">👁️</button>
+              </div>
+              <div class="error-message" id="reg-confirm-password-error"></div>
+            </div>
+            <button type="submit" class="submit-button">Зарегистрироваться</button>
+            <p class="switch-form">Уже есть аккаунт? <a href="#" id="show-login">Войти</a></p>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Модальное окно подтверждения выхода -->
+      <div class="logout-modal-overlay">
+        <div class="logout-modal">
+          <h3>Вы уверены, что хотите выйти?</h3>
+          <div class="logout-buttons">
+            <button class="confirm-logout-button">Да, выйти</button>
+            <button class="cancel-logout-button">Отмена</button>
+          </div>
+        </div>
+      </div>
+
       <footer class="site-footer">
-        <p>&copy; 2024 Мобильная Разработка</p>
+        
+        <div class="social-links">
+          <a href="https://github.com/daniilgargun/" target="_blank" aria-label="GitHub"><img src="img/icons8-github-30.png" alt="GitHub"></a>
+          <a href="https://t.me/Daniilgargun" target="_blank" aria-label="Telegram"><img src="img/icons8-телеграм-50.png" alt="Telegram"></a>
+          <a href="https://www.linkedin.com/in/daniil-gargun-620565366/" target="_blank" aria-label="LinkedIn"><img src="img/icons8-линкедин-50.png" alt="LinkedIn"></a>
+        </div>
         <nav class="footer-menu">
           <ul>
             <li><a href="/html/privacy.html">Политика конфиденциальности</a></li>
             <li><a href="/html/developer.html">О Разработчике</a></li>
             <li><a href="/html/index.html">Главная</a></li>
             <li><a href="/html/download.html">Скачать</a></li>
+            <li><a href="https://www.bartc.by/">БТК</a></li>
           </ul>
         </nav>
+        <p>&copy; 2024 DaniilGargun</p>
       </footer>
     </div>
   </body>
