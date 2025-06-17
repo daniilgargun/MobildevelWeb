@@ -1,0 +1,293 @@
+/* public/css/404.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Небольшой отступ по краям */
+    box-sizing: border-box;
+}
+
+.container {
+    padding-top: 0; /* Убираем отступ, так как шапка на 404 не нужна */
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px; /* Отступ между элементами */
+    overflow-y: auto; /* Добавляем прокрутку по вертикали, если контент не помещается */
+    max-height: 100vh; /* Ограничиваем высоту контейнера */
+    box-sizing: border-box; /* Учитываем padding в размере */
+}
+
+/* Стилизация скроллбара для glassmorphism */
+.container::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); /* Фон трека скроллбара */
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); /* Цвет ползунка скроллбара */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3); /* Цвет ползунка при наведении */
+}
+
+.error-404-section {
+    background-color: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    width: 90%;
+    max-width: 700px;
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-404-section h1 {
+    font-size: 3rem;
+    color: #ff4d4d; /* Красный цвет для ошибки */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    animation: glitchText 1.5s infinite alternate linear;
+}
+
+.error-404-section p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.home-button {
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none; /* Для ссылки */
+    display: inline-block; /* Для корректного отображения padding */
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--neon-blue);
+}
+
+/* Стили для анимированного телефона */
+.phone-error-container {
+    position: relative;
+    width: 280px; /* Увеличиваем ширину */
+    height: 200px; /* Уменьшаем высоту */
+    background-color: #1a1a1a; /* Цвет корпуса телефона */
+    border: 10px solid #333; /* Рамка */
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+    animation: phoneEntrance 1s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.phone-screen {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; /* Немного уменьшаем шрифт для лучшего размещения */
+    color: #fff;
+}
+
+.glitch-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.1); /* Красный оттенок для "глюка" */
+    animation: glitchScreen 0.2s infinite linear alternate, flicker 0.1s infinite alternate;
+    opacity: 0; /* Изначально невидимый */
+    z-index: 1;
+}
+
+.broken-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem; /* Уменьшаем шрифт, чтобы помещался весь текст */
+    color: #ff4d4d;
+    text-align: center;
+    white-space: pre-wrap;
+    line-height: 1.2;
+    animation: textFlicker 0.1s infinite alternate;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitchText {
+    0% { transform: translate(0); text-shadow: 0 0 5px rgba(255, 77, 77, 0.5); }
+    20% { transform: translate(-2px, 2px); text-shadow: 2px 2px 0 red, -2px -2px 0 blue; }
+    40% { transform: translate(-2px, -2px); text-shadow: -2px 2px 0 green, 2px -2px 0 purple; }
+    60% { transform: translate(2px, 2px); text-shadow: 2px -2px 0 yellow, -2px 2px 0 cyan; }
+    80% { transform: translate(2px, -2px); text-shadow: -2px -2px 0 orange, 2px 2px 0 lime; }
+    100% { transform: translate(0); text-shadow: 0 0 5px rgba(255, 77, 77, 0.5); }
+}
+
+@keyframes phoneEntrance {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glitchScreen {
+    0% {
+        clip: rect(35px, 9999px, 99px, 0);
+        opacity: 0.5;
+    }
+    10% {
+        clip: rect(110px, 9999px, 180px, 0);
+        opacity: 0.8;
+    }
+    20% {
+        clip: rect(10px, 9999px, 40px, 0);
+        opacity: 0.6;
+    }
+    30% {
+        clip: rect(80px, 9999px, 150px, 0);
+        opacity: 0.7;
+    }
+    40% {
+        clip: rect(180px, 9999px, 220px, 0);
+        opacity: 0.9;
+    }
+    50% {
+        clip: rect(50px, 9999px, 120px, 0);
+        opacity: 0.4;
+    }
+    60% {
+        clip: rect(200px, 9999px, 250px, 0);
+        opacity: 0.8;
+    }
+    70% {
+        clip: rect(0, 9999px, 60px, 0);
+        opacity: 0.6;
+    }
+    80% {
+        clip: rect(130px, 9999px, 190px, 0);
+        opacity: 0.7;
+    }
+    90% {
+        clip: rect(70px, 9999px, 140px, 0);
+        opacity: 0.9;
+    }
+    100% {
+        clip: rect(0, 9999px, 0, 0); /* Скрываем в конце цикла */
+        opacity: 0.5;
+    }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    40% { opacity: 0.8; }
+    60% { opacity: 1; }
+    80% { opacity: 0.9; }
+}
+
+@keyframes textFlicker {
+    0%, 100% { text-shadow: none; }
+    20% { text-shadow: 0 0 5px #ff4d4d; }
+    40% { text-shadow: none; }
+    60% { text-shadow: 0 0 5px #ff4d4d; }
+    80% { text-shadow: none; }
+}
+
+/* Адаптивность для 404 страницы */
+@media (max-width: 768px) {
+    .error-404-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .error-404-section p {
+        font-size: 1rem;
+    }
+
+    .phone-error-container {
+        width: 220px; /* Адаптация ширины */
+        height: 160px; /* Адаптация высоты */
+        border-radius: 20px;
+    }
+
+    .phone-screen {
+        border-radius: 12px;
+        font-size: 1rem;
+    }
+
+    .broken-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-404-section {
+        padding: 30px;
+        border-radius: 15px;
+        gap: 20px;
+    }
+
+    .error-404-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .error-404-section p {
+        font-size: 0.9rem;
+    }
+
+    .home-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .phone-error-container {
+        width: 180px; /* Адаптация ширины */
+        height: 130px; /* Адаптация высоты */
+        border-radius: 15px;
+        border-width: 8px;
+    }
+
+    .phone-screen {
+        border-radius: 10px;
+        font-size: 0.8rem; /* Дополнительное уменьшение шрифта для маленьких экранов */
+    }
+
+    .broken-text {
+        font-size: 1rem;
+    }
+} 

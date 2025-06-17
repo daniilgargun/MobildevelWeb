@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница не найдена - 404</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon2.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon2.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon2.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/404.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/aurora-background.js"></script>
+    <script type="module" src="js/404.js"></script>
 </head>
 <body>
     <div id="aurora-background" class="aurora-background"></div>
@@ -17,12 +24,19 @@
         <main class="main-content">
             <section class="error-404-section">
                 <h1>404: Ошибка компиляции!</h1>
+                <!-- Контейнер для анимированного телефона -->
+                <div class="phone-error-container">
+                    <div class="phone-screen">
+                        <div class="glitch-effect"></div>
+                        <pre class="broken-text"></pre>
+                    </div>
+                </div>
                 <p>Кажется, этой страницы не существует... Или мы просто забыли добавить ее в последний релиз приложения.</p>
-                <p>Возможно, вы столкнулись с непредвиденной "фичей". Попробуйте вернуться на <a href="index.html">главную страницу</a> и начать заново, пока мы не "задеплоили" правильное решение!</p>
+                <a href="index.html" class="home-button">На главную страницу</a>
             </section>
         </main>
         <footer class="site-footer">
-            <p>&copy; 2024 Мобильная Разработка</p>
+            <p>&copy; 2025 Мобильная Разработка</p>
         </footer>
     </div>
 </body>

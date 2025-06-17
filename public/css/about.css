@@ -1,0 +1,342 @@
+/* public/css/about.css */
+
+.about-hero {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: var(--glass-background);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.about-hero h2 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--glass-background);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.about-section:nth-of-type(1) { animation-delay: 0.2s; }
+.about-section:nth-of-type(2) { animation-delay: 0.4s; }
+.about-section:nth-of-type(3) { animation-delay: 0.6s; }
+
+.about-section.reverse {
+    flex-direction: row-reverse; /* For alternating layout */
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-content.full-width {
+    flex: none;
+    width: 100%;
+    text-align: center;
+}
+
+.about-content h3 {
+    font-size: 2.5rem;
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(147, 78, 220, 0.5);
+}
+
+.about-content p,
+.about-content ul li {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li strong {
+    color: var(--neon-blue);
+}
+
+.mission-quote {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    border-left: 5px solid var(--neon-purple);
+    padding-left: 20px;
+}
+
+.mission-points p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+.mission-points p i {
+    font-size: 1.5rem;
+    color: var(--neon-blue);
+}
+
+.about-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.team-section .about-content {
+    text-align: center;
+}
+
+.team-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.team-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.team-member-slide {
+    flex: 0 0 33.33%; /* Show 3 members at a time */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.team-member-content {
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--neon-purple);
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(147, 78, 220, 0.5);
+}
+
+.team-member-content h4 {
+    font-size: 1.8rem;
+    color: var(--neon-blue);
+    margin-bottom: 5px;
+    text-shadow: none; /* Override general h4 shadow */
+}
+
+.team-member-content span {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.member-social-links a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    filter: grayscale(100%) brightness(150%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.member-social-links a:hover img {
+    filter: grayscale(0%) brightness(100%);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.carousel-button:hover {
+    background-color: var(--neon-purple);
+    color: #fff;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dot.active {
+    background-color: var(--neon-blue);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .team-member-slide {
+        flex: 0 0 50%; /* Show 2 members at a time */
+    }
+}
+
+@media (max-width: 992px) {
+    .about-hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero p {
+        font-size: 1rem;
+    }
+
+    .about-section {
+        flex-direction: column !important; /* Stack columns on smaller screens */
+        text-align: center;
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .about-content,
+    .about-image-container {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .about-content.full-width {
+        text-align: center;
+    }
+
+    .about-content h3 {
+        font-size: 2rem;
+    }
+
+    .about-content p,
+    .about-content ul li {
+        font-size: 1rem;
+    }
+
+    .mission-quote {
+        font-size: 1.1rem;
+        padding-left: 15px;
+    }
+
+    .team-member-slide {
+        flex: 0 0 100%; /* Show 1 member at a time */
+    }
+
+    .carousel-button {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero {
+        padding: 50px 20px;
+    }
+
+    .about-hero h2 {
+        font-size: 2rem;
+    }
+
+    .about-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .mission-points p {
+        font-size: 0.9rem;
+    }
+
+    .team-member-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .team-member-content span {
+        font-size: 0.9rem;
+    }
+} 

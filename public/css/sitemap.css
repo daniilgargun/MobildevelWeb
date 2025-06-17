@@ -1,0 +1,152 @@
+.sitemap-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sitemap-hero h2 {
+    font-size: 2.8rem;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.sitemap-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.sitemap-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.sitemap-category {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sitemap-category:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.25), 0 0 25px var(--neon-blue); /* Более заметная тень и подсветка */
+}
+
+.sitemap-category h3 {
+    font-size: 1.8rem;
+    color: var(--neon-white);
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(var(--neon-blue-rgb), 0.5);
+    padding-bottom: 10px;
+}
+
+.sitemap-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemap-category li {
+    margin-bottom: 10px;
+}
+
+.sitemap-category li a {
+    color: var(--text-color-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block; /* Чтобы transform работал */
+    padding: 5px 0;
+}
+
+.sitemap-category li a:hover {
+    color: var(--highlight-color);
+    transform: translateX(5px); /* Небольшое смещение вправо при наведении */
+    text-shadow: 0 0 5px rgba(var(--highlight-color-rgb), 0.5);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .sitemap-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sitemap-hero {
+        padding: 60px 15px;
+    }
+
+    .sitemap-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .sitemap-hero p {
+        font-size: 1rem;
+    }
+
+    .sitemap-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .sitemap-category {
+        padding: 20px;
+    }
+
+    .sitemap-category h3 {
+        font-size: 1.6rem;
+    }
+
+    .sitemap-category li a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sitemap-hero {
+        padding: 40px 10px;
+    }
+
+    .sitemap-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .sitemap-content {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .sitemap-category {
+        padding: 15px;
+    }
+
+    .sitemap-category h3 {
+        font-size: 1.4rem;
+    }
+
+    .sitemap-category li a {
+        font-size: 0.95rem;
+    }
+} 

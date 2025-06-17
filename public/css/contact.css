@@ -1,0 +1,234 @@
+/* Общие стили для glassmorphism-панелей уже есть в style.css, но можно уточнить */
+.glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Для интерактивных анимаций */
+}
+
+.glass-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 20px var(--neon-blue); /* Более заметная тень и подсветка */
+}
+
+.contact-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-hero h2 {
+    font-size: 2.8rem;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px; /* Общий padding для glass-card */
+}
+
+.contact-info-section, .contact-form-section {
+    flex: 1; /* Распределение доступного пространства */
+    min-width: 300px; /* Минимальная ширина для каждого столбца */
+    padding: 0; /* Убираем padding, так как он уже есть у родителя .contact-content */
+}
+
+.contact-info-section h3, .contact-form-section h3, .map-section h3 {
+    font-size: 2rem;
+    color: var(--text-color-light);
+    margin-bottom: 25px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: var(--text-color-primary);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-details strong {
+    color: var(--neon-white);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form .input-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Увеличение толщины и заметности границы */
+    border-radius: 25px; /* Более круглые края */
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color-light);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--neon-blue); /* Цвет границы при фокусе */
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(var(--neon-blue-rgb), 0.7); /* Подсветка при фокусе */
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .submit-button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--highlight-color));
+    color: var(--background-color);
+    border: none;
+    border-radius: 25px; /* Более круглые края */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease; /* Добавлен background для градиента */
+    align-self: center;
+    box-shadow: 0 0 10px rgba(var(--neon-blue-rgb), 0.5); /* Изначальная тень для заметности */
+}
+
+.contact-form .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--neon-blue-rgb), 0.7), 0 0 15px rgba(var(--highlight-color-rgb), 0.7); /* Усиленная тень и подсветка */
+    background: linear-gradient(45deg, var(--highlight-color), var(--neon-blue)); /* Изменение градиента при наведении */
+}
+
+.form-status-message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
+.map-section {
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 60px 15px;
+    }
+
+    .contact-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-hero p {
+        font-size: 1rem;
+    }
+
+    .contact-content {
+        flex-direction: column; /* На мобильных устройствах делаем одноколоночный макет */
+        padding: 20px; /* Уменьшаем padding для мобильных */
+    }
+
+    .contact-info-section, .contact-form-section {
+        min-width: unset; /* Сбрасываем минимальную ширину */
+        width: 100%;
+    }
+
+    .contact-info-section h3, .contact-form-section h3, .map-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .contact-details, .contact-form {
+        padding: 0;
+    }
+
+    .map-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero {
+        padding: 40px 10px;
+    }
+
+    .contact-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info-section, .contact-form-section, .map-section {
+        padding: 15px;
+    }
+
+    .contact-details p {
+        font-size: 0.9rem;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+} 

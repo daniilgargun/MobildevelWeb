@@ -1,0 +1,238 @@
+/* public/css/services.css */
+
+.service-overview .feature-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--menu-glass-background); /* Используем фон для меню */
+    border: 1px solid var(--menu-border);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.08); /* Чуть светлее при наведении */
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px var(--neon-blue)); /* Легкое свечение для иконок */
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card h4 {
+    font-size: 1.6rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin: 0;
+    max-width: none; /* Убираем max-width, чтобы текст заполнял карточку */
+}
+
+/* Стили для секции процесса */
+.process-section .feature-content {
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-step {
+    background-color: var(--menu-glass-background);
+    border: 1px solid var(--menu-border);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden; /* Для эффекта фона */
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.process-step .step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.08); /* Очень бледный номер */
+    z-index: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.process-step:hover .step-number {
+    color: rgba(255, 255, 255, 0.15);
+    transform: translateX(-50%) translateY(-20px) scale(1.1);
+}
+
+.process-step h4 {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px var(--neon-purple);
+    position: relative;
+    z-index: 1;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Стили для секции преимуществ */
+.benefits-section .feature-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    background-color: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease-in-out;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.benefit-item h4 {
+    font-size: 1.4rem;
+    color: var(--neon-blue);
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(0, 176, 255, 0.3);
+}
+
+.benefit-item p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    max-width: none; /* Убираем max-width */
+}
+
+/* Адаптивность для страницы услуг */
+@media (max-width: 992px) {
+    .service-cards-grid, .process-steps, .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .service-card, .process-step, .benefit-item {
+        padding: 25px;
+    }
+
+    .service-card h4, .process-step h4, .benefit-item h4 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p, .process-step p, .benefit-item p {
+        font-size: 0.9rem;
+    }
+
+    .service-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .process-step .step-number {
+        font-size: 3rem;
+        top: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-cards-grid, .process-steps, .benefits-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        gap: 20px;
+    }
+
+    .service-card, .process-step, .benefit-item {
+        max-width: 350px; /* Ограничиваем ширину для одной колонки */
+        margin: 0 auto; /* Центрируем */
+    }
+
+    .service-card h4, .process-step h4, .benefit-item h4 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p, .process-step p, .benefit-item p {
+        font-size: 0.85rem;
+    }
+
+    .service-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .process-step .step-number {
+        font-size: 2.5rem;
+    }
+} 

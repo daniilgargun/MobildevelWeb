@@ -1,0 +1,210 @@
+.developer-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.developer-hero h2 {
+    font-size: 2.8rem;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.developer-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-me-section, .skills-section, .projects-showcase-section {
+    padding: 30px;
+    margin-bottom: 40px;
+    /* Общие стили glass-card применяются к этим секциям */
+}
+
+.about-me-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.developer-photo-container {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--neon-white); /* Белая рамка */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Белое свечение */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developer-photo-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 1); /* Более интенсивное свечение */
+}
+
+.developer-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-me-content {
+    flex-grow: 1;
+    color: var(--text-color-primary);
+}
+
+.about-me-section h3, .skills-section h3, .projects-showcase-section h3 {
+    font-size: 2rem;
+    color: var(--neon-white);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Белое свечение для заголовков */
+    text-align: center;
+}
+
+.about-me-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: var(--text-color-light);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.skill-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Белое свечение */
+    transform: translateY(-3px);
+}
+
+.project-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-link-item {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Белая заметная граница */
+    border-radius: 25px; /* Круглые края */
+    padding: 15px 30px;
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Белое свечение текста */
+    text-align: center;
+}
+
+.project-link-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Интенсивное белое свечение */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .developer-hero {
+        padding: 60px 15px;
+    }
+
+    .developer-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .developer-hero p {
+        font-size: 1rem;
+    }
+
+    .about-me-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .developer-photo-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-me-section h3, .skills-section h3, .projects-showcase-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .about-me-content p {
+        font-size: 1rem;
+    }
+
+    .skill-item {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .project-link-item {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .developer-hero {
+        padding: 40px 10px;
+    }
+
+    .developer-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-me-section h3, .skills-section h3, .projects-showcase-section h3 {
+        font-size: 1.6rem;
+    }
+
+    .developer-photo-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .about-me-content p {
+        font-size: 0.9rem;
+    }
+
+    .skill-item {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .project-link-item {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+} 

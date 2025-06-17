@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Mobildevel</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon2.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon2.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon2.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/aurora-background.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+  </head>
+  <body>
+    <div id="aurora-background" class="aurora-background"></div>
+    <div class="container">
+      <header class="site-header">
+        <div class="logo">Mobildevel</div>
+        <button class="hamburger-menu" aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="mobile-menu-wrapper">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="services.html">Услуги</a></li>
+              <li class="active">Портфолио</li>
+              <li><a href="clients.html">Клиенты</a></li>
+              <li><a href="blog.html">Блог</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="privacy.html">Конфиденциальность</a></li>
+              <li><a href="contact.html">Контакты</a></li>
+              <li><a href="sitemap.html">Карта сайта</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button class="login-button" id="auth-button" aria-label="Войти или Зарегистрироваться" data-logged-in="false">Войти</button>
+      </header>
+      <main class="main-content">
+        <section class="hero-section">
+          <h2>Наше портфолио</h2>
+          <p>Погрузитесь в мир наших завершенных проектов. Каждый кейс — это история успеха, где технологии встречаются с инновациями.</p>
+        </section>
+
+        <section class="project-section">
+          <div class="project-content">
+            <h3>Мобильное приложение для управления финансами "FinFlow"</h3>
+            <p>FinFlow - это интуитивно понятное кроссплатформенное мобильное приложение, разработанное на Flutter, которое помогает пользователям эффективно управлять своими личными финансами. Приложение включает в себя функции отслеживания доходов и расходов, бюджетирования, категорийного анализа и интерактивных графиков.</p>
+            <ul class="project-features">
+              <li>Кроссплатформенная разработка на Flutter</li>
+              <li>Интеграция с банковскими API</li>
+              <li>Настраиваемые бюджеты и категории</li>
+              <li>Визуализация данных в реальном времени</li>
+              <li>Безопасная аутентификация пользователя</li>
+            </ul>
+            <a href="project-finflow.html" class="view-project-button">Подробнее о проекте</a>
+          </div>
+          <div class="project-image-container">
+            <img src="../img/FinFlow.png" alt="FinFlow App" class="project-image">
+          </div>
+        </section>
+
+        <section class="project-section reverse">
+          <div class="project-image-container">
+            <img src="../img/edubridge.png" alt="EduBridge Platform" class="project-image">
+          </div>
+          <div class="project-content">
+            <h3>Образовательная платформа "EduBridge"</h3>
+            <p>EduBridge - это комплексное мобильное и веб-приложение, предназначенное для оптимизации процесса обучения и взаимодействия между студентами и преподавателями. Проект включает в себя систему управления курсами, интерактивные тесты, чаты и систему уведомлений.</p>
+            <ul class="project-features">
+              <li>Полный стек: мобильное приложение (iOS/Android) и веб-портал</li>
+              <li>Управление учебным контентом</li>
+              <li>Система оценок и отслеживания прогресса</li>
+              <li>Интерактивные элементы для геймификации</li>
+              <li>Масштабируемая серверная архитектура</li>
+            </ul>
+            <a href="project-edubridge.html" class="view-project-button">Подробнее о проекте</a>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="project-content">
+            <h3>Приложение для умного дома "SmartHome Connect"</h3>
+            <p>SmartHome Connect предоставляет централизованный контроль над устройствами умного дома. Приложение позволяет управлять освещением, климатом, безопасностью и медиасистемами из любой точки мира, предлагая удобный и безопасный способ автоматизации жилья.</p>
+            <ul class="project-features">
+              <li>Интеграция с различными IoT-устройствами</li>
+              <li>Настраиваемые сценарии автоматизации</li>
+              <li>Удаленный доступ и управление</li>
+              <li>Голосовое управление (опционально)</li>
+              <li>Интуитивный UI/UX для легкой навигации</li>
+            </ul>
+            <a href="project-smarthome.html" class="view-project-button">Подробнее о проекте</a>
+          </div>
+          <div class="project-image-container">
+            <img src="../img/smarthome.png" alt="SmartHome Connect" class="project-image">
+          </div>
+        </section>
+
+      </main>
+      <div class="login-modal-overlay">
+        <div class="login-modal">
+          <button class="close-modal-button">&times;</button>
+          <h3>Вход / Регистрация</h3>
+          <form class="login-form">
+            <div class="input-group">
+              <label for="username">Имя пользователя:</label>
+              <input type="text" id="username" name="username" required placeholder="Введите ваше имя пользователя">
+              <div class="error-message" id="username-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="password">Пароль:</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="password" name="password" required placeholder="Введите ваш пароль">
+                <button type="button" class="toggle-password" aria-label="Показать/скрыть пароль">👁️</button>
+              </div>
+              <div class="error-message" id="password-error"></div>
+            </div>
+            <button type="submit" class="submit-button">Войти</button>
+            <p class="switch-form">Нет аккаунта? <a href="#" id="show-register">Зарегистрироваться</a></p>
+          </form>
+          <form class="register-form" style="display: none;">
+            <div class="input-group">
+              <label for="reg-username">Имя пользователя:</label>
+              <input type="text" id="reg-username" name="reg-username" required placeholder="Придумайте имя пользователя">
+              <div class="error-message" id="reg-username-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="reg-email">Email:</label>
+              <input type="email" id="reg-email" name="reg-email" required placeholder="Введите ваш Email">
+              <div class="error-message" id="reg-email-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="reg-password">Пароль:</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="reg-password" name="reg-password" required placeholder="Придумайте надежный пароль">
+                <button type="button" class="toggle-password" aria-label="Показать/скрыть пароль">👁️</button>
+              </div>
+              <div class="password-strength" id="password-strength"></div>
+              <div class="error-message" id="reg-password-error"></div>
+            </div>
+            <div class="input-group">
+              <label for="reg-confirm-password">Подтвердите пароль:</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="reg-confirm-password" name="reg-confirm-password" required placeholder="Повторите пароль">
+                <button type="button" class="toggle-password" aria-label="Показать/скрыть пароль">👁️</button>
+              </div>
+              <div class="error-message" id="reg-confirm-password-error"></div>
+            </div>
+            <button type="submit" class="submit-button">Зарегистрироваться</button>
+            <p class="switch-form">Уже есть аккаунт? <a href="#" id="show-login">Войти</a></p>
+          </form>
+        </div>
+      </div>
+      <!-- Модальное окно подтверждения выхода -->
+      <div class="logout-modal-overlay">
+        <div class="logout-modal">
+          <h3>Вы уверены, что хотите выйти?</h3>
+          <div class="logout-buttons">
+            <button class="confirm-logout-button">Да, выйти</button>
+            <button class="cancel-logout-button">Отмена</button>
+          </div>
+        </div>
+      </div>
+      <footer class="site-footer">
+        <div class="social-links">
+          <a href="https://github.com/daniilgargun/" target="_blank" aria-label="GitHub"><img src="../img/icons8-github-30.png" alt="GitHub"></a>
+          <a href="https://t.me/Daniilgargun" target="_blank" aria-label="Telegram"><img src="../img/icons8-телеграм-50.png" alt="Telegram"></a>
+          <a href="https://www.linkedin.com/in/daniil-gargun-620565366/" target="_blank" aria-label="LinkedIn"><img src="../img/icons8-линкедин-50.png" alt="LinkedIn"></a>
+        </div>
+        <nav class="footer-menu">
+          <ul>
+            <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            <li><a href="developer.html">О Разработчике</a></li>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="download.html">Скачать</a></li>
+          </ul>
+        </nav>
+        <p>&copy; 2025 DaniilGargun</p>
+      </footer>
+    </div>
+  </body>
+</html> 

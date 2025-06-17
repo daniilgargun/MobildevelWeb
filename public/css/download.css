@@ -1,0 +1,129 @@
+.download-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.download-hero h2 {
+    font-size: 2.8rem;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.download-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color-primary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.download-section {
+    padding: 50px 30px;
+    text-align: center;
+    /* Применяем glass-card стили из style.css */
+}
+
+.download-section h3 {
+    font-size: 2.2rem;
+    color: var(--neon-white);
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px rgba(var(--neon-blue-rgb), 0.7);
+}
+
+.download-section p {
+    font-size: 1.1rem;
+    color: var(--text-color-primary);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--highlight-color));
+    color: var(--background-color);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 35px; /* Очень круглые края */
+    border: 3px solid rgba(255, 255, 255, 0.6); /* Заметная белая граница */
+    box-shadow: 0 0 20px rgba(var(--neon-blue-rgb), 0.6); /* Неоновое свечение */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.download-button:hover {
+    transform: translateY(-7px) scale(1.03);
+    background: linear-gradient(45deg, var(--highlight-color), var(--neon-blue));
+    box-shadow: 0 0 35px rgba(var(--highlight-color-rgb), 0.8), 0 0 25px rgba(var(--neon-blue-rgb), 0.8); /* Усиленное свечение */
+    border-color: rgba(255, 255, 255, 0.9); /* Более яркая граница */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .download-hero {
+        padding: 60px 15px;
+    }
+
+    .download-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .download-hero p {
+        font-size: 1rem;
+    }
+
+    .download-section {
+        padding: 40px 20px;
+    }
+
+    .download-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .download-section p {
+        font-size: 1rem;
+    }
+
+    .download-button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-hero {
+        padding: 40px 10px;
+    }
+
+    .download-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .download-section {
+        padding: 30px 15px;
+    }
+
+    .download-section h3 {
+        font-size: 1.6rem;
+    }
+
+    .download-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+} 

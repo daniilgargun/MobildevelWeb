@@ -1,0 +1,206 @@
+/* public/css/projects.css */
+
+.project-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    background-color: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: slideIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.project-section:nth-of-type(odd) { /* Задержка для каждой второй секции */
+    animation-delay: 0.2s;
+}
+
+.project-section:nth-of-type(even) { /* Задержка для каждой третьей секции */
+    animation-delay: 0.4s;
+}
+
+.project-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.project-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
+.project-content p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    max-width: none;
+}
+
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.project-features li {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.project-features li::before {
+    content: '✓'; /* Иконка галочки */
+    color: var(--neon-blue); /* Цвет галочки */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.view-project-button {
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.view-project-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--neon-blue);
+}
+
+.project-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    min-width: 250px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+    animation: rotateAndScale 5s infinite alternate ease-in-out;
+}
+
+.project-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(147, 78, 220, 0.5));
+    animation: floatEffect 4s infinite alternate ease-in-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes rotateAndScale {
+    0% { transform: scale(1) rotateY(0deg); }
+    50% { transform: scale(1.02) rotateY(5deg); }
+    100% { transform: scale(1) rotateY(0deg); }
+}
+
+@keyframes floatEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Адаптивность для страницы портфолио */
+@media (max-width: 992px) {
+    .project-section {
+        flex-direction: column; /* На небольших экранах элементы будут в колонку */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .project-section.reverse {
+        flex-direction: column; /* Также в колонку для reverse */
+    }
+
+    .project-content {
+        text-align: center;
+    }
+
+    .project-image-container {
+        order: -1; /* Поместить изображение сверху на мобильных */
+        margin-bottom: 20px;
+    }
+
+    .project-section.reverse .project-image-container {
+        order: -1; /* Тоже сверху для reverse */
+    }
+
+    .project-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .project-content p {
+        font-size: 1rem;
+    }
+
+    .project-features li {
+        font-size: 0.95rem;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-section {
+        padding: 30px 15px;
+    }
+
+    .project-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+    }
+
+    .project-features li {
+        font-size: 0.85rem;
+    }
+
+    .project-image-container {
+        height: 250px;
+    }
+
+    .view-project-button {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+} 
