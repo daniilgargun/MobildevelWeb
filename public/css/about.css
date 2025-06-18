@@ -79,7 +79,7 @@
 }
 
 .about-content ul li strong {
-    color: var(--neon-blue);
+    color: var(--neon-white);
 }
 
 .mission-quote {
@@ -102,7 +102,7 @@
 
 .mission-points p i {
     font-size: 1.5rem;
-    color: var(--neon-blue);
+    color: var(--neon-white);
 }
 
 .about-image-container {
@@ -142,7 +142,7 @@
 }
 
 .team-member-slide {
-    flex: 0 0 33.33%; /* Show 3 members at a time */
+    flex: 0 0 100%; /* Всегда одна карточка */
     padding: 15px;
     box-sizing: border-box;
 }
@@ -170,7 +170,7 @@
 
 .team-member-content h4 {
     font-size: 1.8rem;
-    color: var(--neon-blue);
+    color: var(--neon-white);
     margin-bottom: 5px;
     text-shadow: none; /* Override general h4 shadow */
 }
@@ -256,7 +256,7 @@
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .team-member-slide {
-        flex: 0 0 50%; /* Show 2 members at a time */
+        flex: 0 0 100%; /* Переопределяем на одну карточку */
     }
 }
 
@@ -301,7 +301,7 @@
     }
 
     .team-member-slide {
-        flex: 0 0 100%; /* Show 1 member at a time */
+        flex: 0 0 100%; /* Переопределяем на одну карточку */
     }
 
     .carousel-button {

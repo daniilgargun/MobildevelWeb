@@ -8,22 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let slideWidth = slides[0].offsetWidth; // Initial slide width
     let currentIndex = 0;
 
-    // Create dots
-    slides.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            moveToSlide(index);
+    // Создание точек (dots) без дублирования
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                moveToSlide(index);
+            });
+            dotsContainer.appendChild(dot);
         });
-        dotsContainer.appendChild(dot);
-    });
+    }
 
-    const dots = Array.from(dotsContainer.children);
+    createDots();
+    let dots = Array.from(dotsContainer.children);
 
     const updateSlideWidth = () => {
         if (slides.length > 0) {
-            slideWidth = slides[0].offsetWidth;
+            slideWidth = carouselTrack.offsetWidth; // ширина трека = ширина контейнера
+            slides.forEach(slide => {
+                slide.style.width = `${slideWidth}px`;
+            });
             moveToSlide(currentIndex); // Recalculate position on resize
         }
     };
@@ -44,10 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle resize to adjust slide width dynamically
     window.addEventListener('resize', () => {
         updateSlideWidth();
-        // Adjust current index if it goes out of bounds on resize
-        const visibleSlides = Math.round(carouselTrack.offsetWidth / slideWidth);
-        if (currentIndex >= slides.length - visibleSlides + 1) {
-            currentIndex = Math.max(0, slides.length - visibleSlides);
+        // currentIndex не должен выходить за пределы
+        if (currentIndex >= slides.length) {
+            currentIndex = slides.length - 1;
             moveToSlide(currentIndex);
         }
     });
@@ -61,9 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     nextButton.addEventListener('click', () => {
-        const visibleSlides = Math.round(carouselTrack.offsetWidth / slideWidth);
         let newIndex = currentIndex + 1;
-        if (newIndex > slides.length - visibleSlides) {
+        if (newIndex >= slides.length) {
             newIndex = 0; // Loop to start
         }
         moveToSlide(newIndex);
